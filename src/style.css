@@ -1,0 +1,9 @@
+.collapsible-content {
+  overflow: hidden;
+  max-height: 200px; /* начальная высота контента */
+  transition: max-height 0.5s ease; /* добавляем анимацию перехода */
+}
+
+.collapsed .collapsible-content {
+  max-height: 0; /* скрываем контент при сворачивании */
+}
