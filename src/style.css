@@ -1,9 +1,92 @@
-.collapsible-content {
-  overflow: hidden;
-  max-height: 200px; /* начальная высота контента */
-  transition: max-height 0.5s ease; /* добавляем анимацию перехода */
+.collapsible {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
 }
 
-.collapsed .collapsible-content {
-  max-height: 0; /* скрываем контент при сворачивании */
+.collapse-button {
+  font-size: 16px;
+  padding: 10px 10px;
+  background-color: rgb(45, 104, 171);
+  color: rgb(255, 255, 255);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+.collapsible-content {
+  display: none;
+  padding: 10px 10px 0 10px;
+  overflow: hidden;
+  background-color: rgb(45, 104, 171);
+  border: 2px solid rgb(255, 255, 255);
+  color: white;
+}
+
+.show {
+  animation-name: collapseShow;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.hide {
+  animation-name: collapseHide;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes collapseShow {
+  from {
+    height: 0;
+    border-bottom: none;
+    display: none;
+  }
+
+  1% {
+    display: block;
+    border-bottom: none;
+  }
+
+  50% {
+    height: 50px;
+    border-bottom: none;
+  }
+
+  97% {
+    height: 98px;
+    border-bottom: none;
+  }
+
+  to {
+    height: 100px;
+    display: block;
+  }
+}
+
+@keyframes collapseHide {
+  from {
+    height: 100px;
+    display: block;
+  }
+
+  1% {
+    border-bottom: none;
+  }
+
+  50% {
+    height: 50px;
+    border-bottom: none;
+  }
+
+  99% {
+    display: block;
+    height: 2px;
+    border-bottom: none;
+  }
+
+  to {
+    height: 0;
+    border-bottom: none;
+    display: none;
+  }
 }

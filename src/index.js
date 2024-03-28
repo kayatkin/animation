@@ -1,5 +1,5 @@
 import './style.css';
-import Collapse from './collapse';
+import Collapse from './Collapse.js';
 
 const collapseButton = document.querySelector('.collapse-button');
 const collapsibleContent = document.querySelector('.collapsible-content');
